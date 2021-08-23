@@ -1,3 +1,26 @@
+let urlcourante = document.location.href;
+let url = new URL(urlcourante);
+let search_param = new URLSearchParams(url.search);
+
+//fonction Selecte page a la main 
+if (search_param.has('theme')){
+
+    let name=search_param.get('theme');
+
+    if(name=="2"){
+        CTheme();
+        console.log("Theme 2");
+    }
+    else{
+        console.log("Theme 1");
+    }
+};
+
+//création du fameux boutton 
+let button = document.querySelector('.header-logo');
+button.insertAdjacentHTML('afterend', '<a id="btn-theme" href="' + urlcourante + '?theme=2">CTheme</a>');
+
+function CTheme(){
 //modification du logo Porto
 const logo = document.querySelector(".header-logo  img");
 
@@ -11,7 +34,7 @@ let secondimg = document.querySelector("div.owl-carousel div:nth-child(2) img")
 let thirdimg = document.querySelector("div.owl-carousel div:nth-child(3) img")
 
 //changement d'images carousel
-mainimg.src = "./img/sac 1.jpg";
+mainimg.src = "./img/sac3.jpg";
 secondimg.src = "./img/sac2.jpg"; 
 thirdimg.src = "./img/sac3.jpg";
 
@@ -22,7 +45,7 @@ document.querySelector('div.main > div.container > div.row > div.col-lg-9').clas
 
 
 
-// récupération des information pour inversement 
+// récupération des information
 let dome = document.querySelector('div.main > div.container > div.row > div.col-lg-12 > div.row > .col-lg-6:nth-child(2) div.summary');
 
 let form = document.querySelector('form.cart');
@@ -59,3 +82,4 @@ img4.src ="./img/bagluxe.jpg";
 
 //modification bordure Bouton footer 
 document.querySelector('form#newsletterForm > div.input-group > span > button.btn').style.borderRadius="0px";
+};
