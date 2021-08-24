@@ -18,8 +18,8 @@ if (search_param.has('theme')){
 
 //création du fameux boutton 
 let button = document.querySelector('.header-logo');
-button.insertAdjacentHTML('afterend', '<a id="btn-theme" href="' + urlcourante + '?theme=2">CTheme</a>');
-
+button.insertAdjacentHTML('afterend', '<a id="btn-theme" href="' + url.pathname + '?theme=2">/CTheme</a>');
+console.log(url);
 function CTheme(){
 //modification du logo Porto
 const logo = document.querySelector(".header-logo  img");
